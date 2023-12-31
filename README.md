@@ -25,14 +25,14 @@
   <p align="center">
     An awesome template for creating plugins for Minekube Gate!
     <br />
-    <a href="https://github.com/minekube/gate-plugin-template"><strong>Explore the docs »</strong></a>
+    <a href="https://gate.minekube.com/developers/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/minekube/gate-plugin-template">View Demo</a>
     ·
-    <a href="https://github.com/minekube/gate-plugin-template/issues">Report Bug</a>
+    <a href="https://github.com/minekube/gate/issues">Report Bug</a>
     ·
-    <a href="https://github.com/minekube/gate-plugin-template/issues">Request Feature</a>
+    <a href="https://github.com/minekube/gate/issues">Request Feature</a>
   </p>
 </div>
 
@@ -69,7 +69,7 @@ Minecraft proxy written in Go.
 
 1. Clone this repository: `git clone https://github.com/minekube/gate-plugin-template.git`
 2. Install dependencies: `go get`
-3. Run the project: `go run main.go`
+3. Run the project: `go run .`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -77,9 +77,10 @@ Minecraft proxy written in Go.
 
 To create a new Gate plugin, follow these steps:
 
-1. Replace `MyPlugin` in `main.go` and `plugin.yml` with the name of your plugin.
-2. Implement your plugin's functionality in the `main.go` file.
-3. Build and run your plugin.
+1. Create a new package in the `plugins` directory.
+2. Implement your plugin's functionality in the `plugins/xyz/xyz.go` file.
+3. Add your plugin to the `proxy.Plugins` slice in `gate.go`.
+4. Build and run Gate with: `go run .`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -110,24 +111,24 @@ Project Link: [https://github.com/minekube/gate-plugin-template](https://github.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[contributors-shield]: https://img.shields.io/github/contributors/minekube/gate-plugin-template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/minekube/gate.svg?style=for-the-badge
 
-[contributors-url]: https://github.com/minekube/gate-plugin-template/graphs/contributors
+[contributors-url]: https://github.com/minekube/gate/graphs/contributors
 
 [forks-shield]: https://img.shields.io/github/forks/minekube/gate-plugin-template.svg?style=for-the-badge
 
 [forks-url]: https://github.com/minekube/gate-plugin-template/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/minekube/gate-plugin-template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/minekube/gate.svg?style=for-the-badge
 
 [stars-url]: https://github.com/minekube/gate-plugin-template/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/minekube/gate-plugin-template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/minekube/gate.svg?style=for-the-badge
 
 [issues-url]: https://github.com/minekube/gate-plugin-template/issues
 
-[license-shield]: https://img.shields.io/github/license/minekube/gate-plugin-template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/minekube/gate.svg?style=for-the-badge
 
-[license-url]: https://github.com/minekube/gate-plugin-template/blob/master/LICENSE.txt
+[license-url]: https://github.com/minekube/gate/blob/master/LICENSE
 
-[product-screenshot]: url-to-hero-image
+[product-screenshot]: https://github.com/minekube/gate/raw/master/.web/docs/public/og-image.png
