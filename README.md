@@ -44,6 +44,16 @@
 This template repository bootstraps your [Minekube Gate](https://github.com/minekube/gate) project, a customizable
 Minecraft proxy written in Go.
 
+## What's Included?
+
+- `gate.go`: The main entry point of the application.
+- `plugins`: The directory for your custom plugins.
+- `config.yml`: A minimal Gate configuration file.
+- `Dockerfile`: A Dockerfile for building a Docker image.
+- `.github/workflows`: GitHub Action for testing, linting, releasing on tags and publishing Docker images to ghcr.io.
+- `Makefile`: Contains commands for testing and linting.
+- `renovate.json`: Configuration file for Renovate automatic dependency updates.
+
 <details>
 <summary><strong>Prerequisites</strong></summary>
 

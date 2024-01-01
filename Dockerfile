@@ -23,4 +23,5 @@ RUN CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH \
 # Move binary into final image
 FROM --platform=$BUILDPLATFORM gcr.io/distroless/static-debian11 AS app
 COPY --from=build /workspace/gate /
+#COPY config.yml /
 CMD ["/gate"]
