@@ -12,7 +12,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![License][license-shield]][license-url]
 
 <br />
 <div align="center">
@@ -20,15 +20,16 @@
     <img src="https://github.com/minekube/gate-plugin-template/blob/main/assets/hero.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Gate Plugin Template</h3>
+<h3 align="center">Gate Starter Plugin Template</h3>
 
   <p align="center">
-    An awesome template for creating plugins for Minekube Gate!
+    An awesome template for creating your Minecraft proxy powered by Minekube Gate!
+    <br />
     <br />
     <a href="https://gate.minekube.com/developers/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/minekube/gate-plugin-template">View Demo</a>
+    <a href="https://minekube.com/discord">Discord</a>
     ·
     <a href="https://github.com/minekube/gate/issues">Report Bug</a>
     ·
@@ -36,53 +37,41 @@
   </p>
 </div>
 
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
-
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://gate.minekube.com)
 
-This is a template repository for creating plugins for [Minekube Gate](https://github.com/minekube/gate), a scalable
+This template repository bootstraps your [Minekube Gate](https://github.com/minekube/gate) project, a customizable
 Minecraft proxy written in Go.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<details>
+<summary><strong>Prerequisites</strong></summary>
+
+## Prerequisites
+
+- [Go](https://golang.org/doc/install) - The Go Programming Language
+- [Git](https://git-scm.com/downloads) - Distributed Version Control System
+- [GoLand](https://www.jetbrains.com/go/) / [VSCode](https://code.visualstudio.com/) - Gophers' favorite IDEs
+
+</details>
 
 ## Getting Started
 
-1. Clone this repository: `git clone https://github.com/minekube/gate-plugin-template.git`
-2. Install dependencies: `go get`
-3. Run the project: `go run .`
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+1. Fork this repository on GitHub.
+2. Clone forked repository (`git clone <your-forked-repo-url>`)
+3. Open project in your favorite Go IDE.
+4. Run the proxy: `go run .`
+5. Start customizing Gate to your needs!
 
 ## Usage
 
 To create a new Gate plugin, follow these steps:
 
-1. Create a new package in the `plugins` directory.
-2. Implement your plugin's functionality in the `plugins/xyz/xyz.go` file.
-3. Add your plugin to the `proxy.Plugins` slice in `gate.go`.
-4. Build and run Gate with: `go run .`
+1. Create and write your plugin code in a new `plugins/xyz/xyz.go` file.
+2. Add your exported plugin to the `proxy.Plugins` slice in `gate.go`.
+3. Build and run Gate with: `go run .`
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Use the `-d` flag to run Gate in debug mode if you encounter issues. (`go run . -d`)
 
 ## Contributing
 
@@ -92,24 +81,11 @@ contributions you make are **greatly appreciated**.
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+4. Push to the Branch (`git push origin feat/AmazingFeature`)
+5. Open a Pull Request on GitHub
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/minekube/gate-plugin-template](https://github.com/minekube/gate-plugin-template)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/minekube/gate.svg?style=for-the-badge
 
