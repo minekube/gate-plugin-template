@@ -17,7 +17,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/minekube/gate-plugin-template">
-    <img src="https://github.com/minekube/gate-plugin-template/blob/main/assets/hero.png" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/minekube/gate-plugin-template/main/assets/hero.png" alt="Logo" width="128" height="128">
   </a>
 
 <h3 align="center">Gate Starter Plugin Template</h3>
