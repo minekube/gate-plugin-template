@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/go-logr/logr"
 	. "github.com/minekube/gate-plugin-template/util"
+	"github.com/minekube/gate-plugin-template/util/mini"
 	"github.com/robinbraemer/event"
 	"go.minekube.com/common/minecraft/color"
 	c "go.minekube.com/common/minecraft/component"
@@ -26,16 +27,19 @@ var Plugin = proxy.Plugin{
 }
 
 func onPing() func(*proxy.PingEvent) {
-	line2 := &c.Text{
-		Content: "Join, Test And Extend Your Gate Proxy!",
-		S:       c.Style{Color: color.Gold, Bold: c.True},
-	}
+	line2 := mini.Gradient(
+		"Join, test and extend your Gate proxy!",
+		c.Style{Bold: c.True},
+		*color.Yellow.RGB, *color.Gold.RGB, *color.Red.RGB,
+	)
+
 	return func(e *proxy.PingEvent) {
 		clientVersion := version.Protocol(e.Connection().Protocol())
-		line1 := &c.Text{
-			Content: fmt.Sprintf("Hey %s user!\n", clientVersion),
-			S:       c.Style{Color: color.Yellow},
-		}
+		line1 := mini.Gradient(
+			fmt.Sprintf("Hey %s user!\n", clientVersion),
+			c.Style{},
+			*color.White.RGB, *color.LightPurple.RGB,
+		)
 
 		p := e.Ping()
 		p.Description = Join(line1, line2)
