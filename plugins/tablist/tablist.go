@@ -31,7 +31,7 @@ var Plugin = proxy.Plugin{
 func onPostLogin(e *proxy.PostLoginEvent) {
 	// Make use of the Text library.
 	header := &c.Text{
-		Content: fmt.Sprintf("Welcome %s on my network!\n", e.Player().Username()),
+		Content: fmt.Sprintf("\nWelcome %s on my network!\n", e.Player().Username()),
 		S:       c.Style{Color: color.Yellow, Bold: c.True},
 	}
 	footer := &c.Text{

@@ -6,6 +6,7 @@ import (
 	. "github.com/minekube/gate-plugin-template/util"
 	"github.com/robinbraemer/event"
 	"go.minekube.com/brigodier"
+	"go.minekube.com/common/minecraft/color"
 	c "go.minekube.com/common/minecraft/component"
 	"go.minekube.com/gate/pkg/command"
 	"go.minekube.com/gate/pkg/edition/java/proxy"
@@ -33,19 +34,18 @@ var Plugin = proxy.Plugin{
 }
 
 func sendUsage(player proxy.Player) {
-	usage := &c.Text{
-		Content: "Try out: /title <title> [subtitle]\n",
-	}
-	const sampleCmd = `"/title "&5Hello" "&6World"`
-	example := &c.Text{
-		Content: "Example: " + sampleCmd,
+	const sampleCmd = `/title "&5Hello" "&6World"`
+	_ = player.SendMessage(&c.Text{
+		Content: "\nTry out: /title <title> [subtitle]\nExample: " + sampleCmd,
 		S: c.Style{
+			Color:      color.Green,
 			ClickEvent: c.NewClickEvent(c.SuggestCommandAction, sampleCmd),
-			HoverEvent: c.NewHoverEvent(c.ShowTextAction, &c.Text{Content: sampleCmd}),
+			HoverEvent: c.NewHoverEvent(c.ShowTextAction, &c.Text{
+				Content: "Click to auto-fill command",
+				S:       c.Style{Color: color.Green},
+			}),
 		},
-	}
-
-	_ = player.SendMessage(Join(usage, example))
+	})
 }
 
 func titleCommand() brigodier.LiteralNodeBuilder {
