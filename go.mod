@@ -1,6 +1,6 @@
 module github.com/minekube/gate-plugin-template
 
-go 1.22.0
+go 1.22.1
 
 require (
 	github.com/go-logr/logr v1.4.1
