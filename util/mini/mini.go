@@ -136,13 +136,13 @@ func FromName(name string) (color.Color, error) {
 // It creates a gradient effect by interpolating between the input colors based on their position in the input string.
 func Gradient(content string, style c.Style, colors ...color.RGB) *c.Text {
 	var component []c.Component
-	for i := range content {
-		t := float64(i) / float64(len(content))
+	for id, i := range strings.Split(content, "") {
+		t := float64(id) / float64(len(content))
 		hex, _ := color.Hex(LerpColor(t, colors...).Hex())
 
 		style.Color = hex
 		component = append(component, &c.Text{
-			Content: string(content[i]),
+			Content: string(i),
 			S:       style,
 		})
 	}
