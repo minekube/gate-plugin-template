@@ -2,7 +2,7 @@ module github.com/minekube/gate-plugin-template
 
 go 1.23.2
 
-toolchain go1.23.5
+toolchain go1.23.6
 
 require (
 	github.com/go-logr/logr v1.4.2
