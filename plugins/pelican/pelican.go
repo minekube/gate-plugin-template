@@ -103,10 +103,13 @@ func onKickedFromServerEvent(log logr.Logger, cfg *Config, c *HttpClient) func(*
 
 func onDisconnectEvent(log logr.Logger, cfg *Config, c *HttpClient) func(*proxy.DisconnectEvent) {
 	return func(e *proxy.DisconnectEvent) {
-		if s, ok := cfg.Servers[e.Player().CurrentServer().Server().ServerInfo().Name()]; ok {
-			if e.Player().CurrentServer().Server().Players().Len() == 0 {
-				log.Info("Planning to stop the server", "server", e.Player().CurrentServer().Server().ServerInfo().Name(), "pelican", s)
-				go planStop(cfg, c, log, e.Player().CurrentServer().Server())
+		if conn := e.Player().CurrentServer(); conn != nil {
+			srv := conn.Server()
+			if s, ok := cfg.Servers[srv.ServerInfo().Name()]; ok {
+				if srv.Players().Len() == 0 {
+					log.Info("Planning to stop the server", "server", srv.ServerInfo().Name(), "pelican", s)
+					go planStop(cfg, c, log, srv)
+				}
 			}
 		}
 	}

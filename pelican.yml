@@ -1,8 +1,14 @@
-﻿# Token for the Pelican API
+# Token for the Pelican API
 token: Your Pelican token
 
 # Pelican API URL
 url: https://demo.pelican.dev
+
+# Automatically stop the server when no players are online
+autoStop: true
+
+# Delay before stopping the server
+delay: 60
 
 # Server association between gate and pelican
 servers:
