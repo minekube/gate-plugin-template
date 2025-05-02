@@ -1,4 +1,4 @@
-﻿package pelican
+package pelican
 
 import (
 	"bytes"
@@ -13,14 +13,18 @@ import (
 )
 
 type Config struct {
-	Token   string            `yaml:"token" json:"token"`
-	Url     string            `yaml:"url" json:"url"`
-	Servers map[string]string `yaml:"servers,omitempty" json:"servers,omitempty"`
+	Token    string            `yaml:"token" json:"token"`
+	Url      string            `yaml:"url" json:"url"`
+	Autostop bool              `yaml:"autostop" json:"autostop"`
+	Delay    int               `yaml:"delay" json:"delay"`
+	Servers  map[string]string `yaml:"servers,omitempty" json:"servers,omitempty"`
 }
 
 var DefaultConfig = Config{
-	Token: "Your Pelican token",
-	Url:   "https://demo.pelican.dev",
+	Token:    "Your Pelican token",
+	Url:      "https://demo.pelican.dev",
+	Autostop: true,
+	Delay:    60,
 	Servers: map[string]string{
 		"server1": "The UUID of the server you want to connect to",
 	},

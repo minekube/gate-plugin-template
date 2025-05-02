@@ -1,4 +1,4 @@
-﻿package pelican
+package pelican
 
 import (
 	"context"
@@ -15,7 +15,7 @@ import (
 	"time"
 )
 
-var wakeSent = map[string]time.Time{}
+var wakeSent = make(map[string]time.Time)
 
 var Plugin = proxy.Plugin{
 	Name: "Pelican",
@@ -39,6 +39,10 @@ var Plugin = proxy.Plugin{
 		c := NewHttpClient(cfg.Token, cfg.Url)
 
 		event.Subscribe(p.Event(), 0, onKickedFromServerEvent(log, cfg, c))
+		if cfg.Autostop {
+			event.Subscribe(p.Event(), 0, onDisconnectEvent(log, cfg, c))
+			event.Subscribe(p.Event(), 0, onConnectEvent)
+		}
 
 		log.Info("servers configured", "count", len(cfg.Servers))
 		log.Info("Pelican plugin loaded.")
@@ -93,6 +97,17 @@ func onKickedFromServerEvent(log logr.Logger, cfg *Config, c *HttpClient) func(*
 			}}
 			e.SetResult(result)
 			wakeSent[s] = time.Now()
+		}
+	}
+}
+
+func onDisconnectEvent(log logr.Logger, cfg *Config, c *HttpClient) func(*proxy.DisconnectEvent) {
+	return func(e *proxy.DisconnectEvent) {
+		if s, ok := cfg.Servers[e.Player().CurrentServer().Server().ServerInfo().Name()]; ok {
+			if e.Player().CurrentServer().Server().Players().Len() == 0 {
+				log.Info("Planning to stop the server", "server", e.Player().CurrentServer().Server().ServerInfo().Name(), "pelican", s)
+				go planStop(cfg, c, log, e.Player().CurrentServer().Server())
+			}
 		}
 	}
 }

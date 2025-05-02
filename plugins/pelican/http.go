@@ -1,4 +1,4 @@
-﻿package pelican
+package pelican
 
 import (
 	"bytes"
@@ -118,6 +118,18 @@ func (c *HttpClient) StartServer(server string) error {
 	_, err := c.Post(endpoint, body)
 	if err != nil {
 		return fmt.Errorf("error starting server %s: %w", server, err)
+	}
+	return nil
+}
+
+func (c *HttpClient) StopServer(server string) error {
+	endpoint := fmt.Sprintf("servers/%s/power", server)
+	body := map[string]interface{}{
+		"signal": "stop",
+	}
+	_, err := c.Post(endpoint, body)
+	if err != nil {
+		return fmt.Errorf("error stopping server %s: %w", server, err)
 	}
 	return nil
 }
