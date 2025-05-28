@@ -5,7 +5,7 @@ go 1.24.1
 toolchain go1.24.3
 
 require (
-	github.com/go-logr/logr v1.4.2
+	github.com/go-logr/logr v1.4.3
 	github.com/robinbraemer/event v0.1.1
 	go.minekube.com/brigodier v0.0.1
 	go.minekube.com/common v0.0.6
