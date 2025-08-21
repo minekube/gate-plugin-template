@@ -2,14 +2,14 @@ module github.com/minekube/gate-plugin-template
 
 go 1.24.1
 
-toolchain go1.24.4
+toolchain go1.24.6
 
 require (
 	github.com/go-logr/logr v1.4.3
 	github.com/robinbraemer/event v0.1.1
 	go.minekube.com/brigodier v0.0.1
-	go.minekube.com/common v0.0.6
-	go.minekube.com/gate v0.49.2
+	go.minekube.com/common v0.2.0
+	go.minekube.com/gate v0.52.0
 )
 
 require (
