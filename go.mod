@@ -23,6 +23,7 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.6 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
 	github.com/dboslee/lru v0.0.1 // indirect
+	github.com/dilllxd/hostredirect v0.0.0-20240729194429-c814a22f0fdd // indirect
 	github.com/edwingeng/deque/v2 v2.1.1 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect

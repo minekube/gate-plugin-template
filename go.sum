@@ -56,6 +56,8 @@ github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dboslee/lru v0.0.1 h1:PMT+59nkGSkf9Tcb4YMw5B08ilpGgNSmRjEyNK2JVoE=
 github.com/dboslee/lru v0.0.1/go.mod h1:vDIFJHUqr1vdYKAdG9x3r+zFWP0i9uJqQWpB6nSuHxM=
+github.com/dilllxd/hostredirect v0.0.0-20240729194429-c814a22f0fdd h1:AOVFL7W0cFXBcSa/09yqNIuvItBI//z03OqrWhITrDk=
+github.com/dilllxd/hostredirect v0.0.0-20240729194429-c814a22f0fdd/go.mod h1:1cSrzpOFsBjE2ISjofSPVBNz6XWT2H7/HKbITV1QMwM=
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 github.com/edwingeng/deque/v2 v2.1.1 h1:+xjC3TnaeMPLZMi7QQf9jN2K00MZmTwruApqplbL9IY=
 github.com/edwingeng/deque/v2 v2.1.1/go.mod h1:HukI8CQe9KDmZCcURPZRYVYjH79Zy2tIjTF9sN3Bgb0=
