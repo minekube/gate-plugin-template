@@ -338,6 +338,8 @@ github.com/zyedidia/generic v1.2.1 h1:Zv5KS/N2m0XZZiuLS82qheRG4X1o5gsWreGb0hR7XD
 github.com/zyedidia/generic v1.2.1/go.mod h1:ly2RBz4mnz1yeuVbQA/VFwGjK3mnHGRj1JuoG336Bis=
 go.minekube.com/brigodier v0.0.1 h1:v5x+fZNefM24JIi+fYQjQcjZ8rwJbfRSpnnpw4b/x6k=
 go.minekube.com/brigodier v0.0.1/go.mod h1:WJf/lyJVTId/phiY6phPW6++qkTjCQ72rbOWqo4XIqc=
+go.minekube.com/brigodier v0.0.2 h1:g6VJtyeQr7Y+lAP1EfpM7Cdv5STiJaE2eXv8LRuGDG8=
+go.minekube.com/brigodier v0.0.2/go.mod h1:WJf/lyJVTId/phiY6phPW6++qkTjCQ72rbOWqo4XIqc=
 go.minekube.com/common v0.0.5 h1:h9EqMI3drSewTroBssy/eQniIP+Itirtj+av2PxyoP4=
 go.minekube.com/common v0.0.5/go.mod h1:PCdSdTInlQv6ggDIbVjLFs7ehSRP4i9KqYsLAeeNUYU=
 go.minekube.com/common v0.0.6 h1:XA4mcgDG13hQEBcY2JdmK0Ca2mx2jOZ9M8pflZ85dkE=
