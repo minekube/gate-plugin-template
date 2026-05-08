@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM golang:1.26.2 AS build
+FROM --platform=$BUILDPLATFORM golang:1.26.3 AS build
 
 WORKDIR /workspace
 # Copy the Go Modules manifests
