@@ -1,0 +1,91 @@
+# ============================================================
+# CloverSecurity Configuration
+# ============================================================
+#
+# Plugin: CloverSecurity
+# Platform: Gate Proxy
+# Author: Poke Meadows
+# Version: 1.0.0
+#
+# Description:
+# CloverSecurity is an authentication protection system
+# for Gate Proxy networks. Players must authenticate
+# through the Auth server before accessing other servers.
+#
+# ============================================================
+
+# ============================================================
+# Server Configuration
+# ============================================================
+#
+# These server names MUST match the names defined
+# inside your main Gate config.yml file.
+#
+# Example:
+#
+# servers:
+#   Auth:
+#   Lobby:
+#   Survival:
+#
+# ============================================================
+
+# Authentication server
+# Players will join here first to register/login.
+auth-server: "Auth"
+
+# Main lobby server
+# Players are sent here after successful authentication.
+lobby-server: "Lobby"
+
+# Backup servers
+# Used if the lobby server is unavailable.
+fallback-servers:
+  - "Lobby"
+  - "Survival"
+  - "Creative"
+  - "KitPvP"
+
+# ============================================================
+# Messages
+# ============================================================
+#
+# You can use Minecraft color codes:
+#
+# &0 = Black
+# &1 = Dark Blue
+# &2 = Dark Green
+# &3 = Dark Aqua
+# &4 = Dark Red
+# &5 = Dark Purple
+# &6 = Gold
+# &7 = Gray
+# &8 = Dark Gray
+# &9 = Blue
+# &a = Green
+# &b = Aqua
+# &c = Red
+# &d = Light Purple
+# &e = Yellow
+# &f = White
+# &l = Bold
+# &n = Underline
+#
+# ============================================================
+
+messages:
+
+  # Sent when the Auth server is offline.
+  auth-offline: "&c[CloverSecurity] &4Authentication server is currently offline. Please try again later."
+
+  # Sent when an unauthenticated player tries
+  # to access another server.
+  no-auth-access: "&e[CloverSecurity] &6Please authenticate first using &l/register &6or &l/login"
+
+  # Sent when an authenticated player attempts
+  # to reconnect to the Auth server.
+  auth-blocked: "&c[CloverSecurity] &4You are already authenticated. Access to the Auth server is blocked."
+
+  # Sent after successful authentication
+  # before transferring the player.
+  transferred: "&a[CloverSecurity] &2Authentication successful! Connecting you to the network..."
