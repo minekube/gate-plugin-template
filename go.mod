@@ -8,7 +8,7 @@ require (
 	github.com/go-logr/logr v1.4.3
 	github.com/robinbraemer/event v0.1.1
 	go.minekube.com/brigodier v0.0.2
-	go.minekube.com/common v0.3.0
+	go.minekube.com/common v0.4.0
 	go.minekube.com/gate v0.65.0
 )
 
@@ -44,7 +44,7 @@ require (
 	github.com/honeycombio/otel-config-go v1.17.0 // indirect
 	github.com/jellydator/ttlcache/v3 v3.4.0 // indirect
 	github.com/knadh/koanf/providers/file v1.2.1 // indirect
-	github.com/lucasb-eyer/go-colorful v1.3.0 // indirect
+	github.com/lucasb-eyer/go-colorful v1.4.0 // indirect
 	github.com/lufia/plan9stats v0.0.0-20250827001030-24949be3fa54 // indirect
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mitchellh/mapstructure v1.5.1-0.20220423185008-bf980b35cac4 // indirect
