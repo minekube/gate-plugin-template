@@ -3,11 +3,24 @@
 config:
   bind: 0.0.0.0:25565
   onlineMode: true
+  # /server visible to admins only (architecture.md 0.1節).
+  requireBuiltinCommandPermissions: true
+  # Unexpected disconnects from hardcore fall back to lobby automatically,
+  # since hardcore is deliberately left out of `try` below (architecture.md 0.4節).
+  failoverOnUnexpectedServerDisconnect: true
+  forwarding:
+    mode: velocity
+    velocitySecret: ${GATE_VELOCITY_SECRET}
   servers:
-    server1: localhost:25566
-    server2: localhost:25567
+    lobby: lobby:25566
+    hardcore: hardcore:25567
   try:
-    - server1
-    - server2
-  # Disabling it allows our global-chat plugin to cancel messages.
-  forceKeyAuthentication: false
+    - lobby
+
+# Hardcore Together Gate plugin config (architecture.md 4節).
+hardcoreTogether:
+  admins:
+    - "11111111-2222-3333-4444-555555555555"
+  managerAddr: manager:9000
+  lobbyServer: lobby
+  hardcoreServer: hardcore
