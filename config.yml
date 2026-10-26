@@ -11,3 +11,8 @@ config:
     - server2
   # Disabling it allows our global-chat plugin to cancel messages.
   forceKeyAuthentication: false
+  # Builtin proxy commands (/server, /glist, /send). With
+  # requireBuiltinCommandPermissions true each command needs its permission
+  # node; the permissions plugin reads the grants from permissions.yml.
+  builtinCommands: true
+  requireBuiltinCommandPermissions: true

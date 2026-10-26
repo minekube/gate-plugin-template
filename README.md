@@ -49,6 +49,7 @@ Minecraft proxy written in Go.
 - `gate.go`: The main entry point of the application.
 - `plugins`: The directory for your custom plugins.
 - `config.yml`: A minimal Gate configuration file.
+- `permissions.yml`: Permission grants for the builtin command example plugin.
 - `Dockerfile`: A Dockerfile for building a Docker image.
 - `.github/workflows`: GitHub Action for testing, linting, releasing on tags and publishing Docker images to ghcr.io.
 - `Makefile`: Contains commands for testing and linting.
@@ -82,6 +83,48 @@ To create a new Gate plugin, follow these steps:
 3. Build and run Gate with: `go run .`
 
 Use the `-d` flag to run Gate in debug mode if you encounter issues. (`go run . -d`)
+
+### Example: permissions for builtin commands
+
+`plugins/permissions` is a ready-to-use example of a permission provider. Gate has no
+permission setting in `config.yml`: a player's permissions are whatever the code handling
+`proxy.PermissionsSetupEvent` returns, and that event fires once per player at login. So
+`requireBuiltinCommandPermissions: true` alone would deny `/server`, `/glist` and `/send`
+to everybody.
+
+The plugin answers that event from `permissions.yml` (read at startup, overridable with the
+`GATE_PERMISSIONS_FILE` environment variable):
+
+```yaml
+# grants for every player that has no entry under "players"
+default:
+  - gate.command.server
+
+players:
+  # UUID or username, case-insensitive. A listed player REPLACES "default".
+  "069a79f4-44e9-4726-a5be-fca90e38aaf5":
+    - gate.command.server
+    - gate.command.glist
+
+# explicit denials win over every grant above
+deny:
+  "069a79f4-44e9-4726-a5be-fca90e38aaf5":
+    - gate.command.send
+```
+
+Wildcards work too: `gate.command.*` for all builtin commands, `*` for every node. A node
+that is not granted stays `Undefined` (rather than `False`), so another plugin's provider can
+still decide it - while `requireBuiltinCommandPermissions` treats it as denied.
+
+Nodes: `gate.command.server`, `gate.command.glist`, `gate.command.send`. Gate's own commands
+are not the only consumers - any `proxy.Player.HasPermission("...")` call in your plugins sees
+the same function, so you can gate your own commands with your own node names.
+
+If you need something richer (LuckPerms-style groups, a database, a web API), keep the same
+shape: subscribe in your plugin's `Init` and call `e.SetFunc(...)`.
+
+Already got a permission plugin? Then delete this one from the `proxy.Plugins` slice -
+two providers both calling `SetFunc` means the last subscription wins.
 
 ## Contributing
 
