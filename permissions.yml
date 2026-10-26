@@ -1,0 +1,33 @@
+# File-backed permissions for Gate builtin proxy commands.
+#
+# Read once at proxy start from ./permissions.yml, or from the path in the
+# GATE_PERMISSIONS_FILE environment variable. Restart Gate after editing.
+#
+# Builtin command nodes:
+#   gate.command.server   -> /server <name>
+#   gate.command.glist    -> /glist
+#   gate.command.send     -> /send <player|server> ...
+#
+# Wildcards: "*" grants every node, "gate.command.*" grants all builtins.
+
+# Grants for every player that has no entry under "players".
+default:
+  - gate.command.server
+
+# Per-player grants, keyed by player UUID (preferred) or username.
+# A listed player REPLACES "default" - it does not inherit it.
+players:
+  # Example: this player gets /server and /glist but still not /send.
+  # "069a79f4-44e9-4726-a5be-fca90e38aaf5":
+  #   - gate.command.server
+  #   - gate.command.glist
+  # Example by name, full builtin access:
+  # "Notch":
+  #   - gate.command.*
+
+# Explicit denials win over every grant above (also over wildcards).
+deny:
+  # Example: keep /send away from this player even if granted a wildcard.
+  # "069a79f4-44e9-4726-a5be-fca90e38aaf5":
+  #   - gate.command.send
+  {}
