@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/minekube/gate-plugin-template/plugins/bossbar"
 	"github.com/minekube/gate-plugin-template/plugins/globalchat"
+	"github.com/minekube/gate-plugin-template/plugins/permissions"
 	"github.com/minekube/gate-plugin-template/plugins/ping"
 	"github.com/minekube/gate-plugin-template/plugins/tablist"
 	"github.com/minekube/gate-plugin-template/plugins/titlecmd"
@@ -24,6 +25,7 @@ func main() {
 		bossbar.Plugin,
 		ping.Plugin,
 		titlecmd.Plugin,
+		permissions.Plugin,
 
 		// Add more plugins as you like.
 		// They will be initialized in the same order as appended.
